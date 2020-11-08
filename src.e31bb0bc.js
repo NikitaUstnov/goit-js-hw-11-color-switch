@@ -118,7 +118,7 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   return newRequire;
 })({"index.js":[function(require,module,exports) {
-// import colors from '/colors-arr';
+// import colors from '/colors-arr'; //с импортом не получилось
 var colors = ['#FFFFFF', '#2196F3', '#4CAF50', '#FF9800', '#009688', '#795548'];
 var startBtnRef = document.querySelector('[data-action="start"]');
 var stopBtnRef = document.querySelector('[data-action="stop"]'); // startBtnRef.addEventListener('click', startColorCahenge);
@@ -131,6 +131,7 @@ startBtnRef.addEventListener('click', function () {
 stopBtnRef.addEventListener('click', function () {
   startBtnRef.disabled = false;
   clearInterval(itervalId);
+  document.body.style.background = colors[0];
 });
 var itervalId = null; // function startColorCahenge() {
 //   startBtnRef.disabled = true;
@@ -176,7 +177,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50196" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49474" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
