@@ -1,4 +1,4 @@
-// import colors from '/colors-arr';
+// import colors from '/colors-arr'; //с импортом не получилось
 const colors = [
   '#FFFFFF',
   '#2196F3',
@@ -21,19 +21,20 @@ startBtnRef.addEventListener('click', () => {
 stopBtnRef.addEventListener('click', () => {
   startBtnRef.disabled = false;
   clearInterval(itervalId);
+  document.body.style.background = colors[0];
 });
 
 let itervalId = null;
-
-// function startColorCahenge() {
-//   startBtnRef.disabled = true;
-//   itervalId = setInterval(colorRamdomSwocherBody, 1000);
-// }
 
 function colorRamdomSwocherBody() {
   document.body.style.background =
     colors[randomIntegerFromInterval(0, colors.length - 1)];
 }
+
+// function startColorCahenge() {
+//   startBtnRef.disabled = true;
+//   itervalId = setInterval(colorRamdomSwocherBody, 1000);
+// }
 
 // function stopColorsChange() {
 //   startBtnRef.disabled = false;
